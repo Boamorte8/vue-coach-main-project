@@ -1,11 +1,12 @@
 import { createApp } from 'vue';
 
 import App from './App.vue';
-import router from './router.js';
-import store from './store/index.js';
 import BaseBadge from './components/ui/BaseBadge.vue';
 import BaseButton from './components/ui/BaseButton.vue';
 import BaseCard from './components/ui/BaseCard.vue';
+import router from './router.js';
+import store from './store/index.js';
+
 
 const app = createApp(App);
 
