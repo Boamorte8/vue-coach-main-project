@@ -11,7 +11,7 @@ const store = createStore({
   },
   modules: {
     coaches: coachesModule,
-    requestsModule,
+    requests: requestsModule,
   },
   actions: {},
   getters: {
