@@ -61,6 +61,8 @@ export default {
       try {
         const event = this.mode === 'login' ? 'login' : 'signup';
         await this.$store.dispatch(event, payload);
+        const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
+        this.$router.replace(redirectUrl);
       } catch (error) {
         this.error = error || 'Failed to authenticate! Try later';
       }
@@ -72,7 +74,12 @@ export default {
     handleError() {
       this.error = null;
     },
-  }
+  },
+  created() {
+    if (this.$route.query.redirect) {
+      this.mode = 'signup';
+    }
+  },
 }
 </script>
 
